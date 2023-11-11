@@ -1,0 +1,28 @@
+<mat-drawer-container class="body-container">
+    <mat-drawer mode="over" #sidenav >Drawer content</mat-drawer>
+    <mat-drawer-content>
+        <mat-toolbar>
+           <div class="left">
+                <button mat-icon-button color="primary" (click)="sidenav.toggle()" class="toggleBtn">To</button>
+                <h1 class="logo">myGym</h1>
+           </div>
+            <ul class="tabs">
+                <li><button class="tab" mat-flat-button routerLinkActive="active" routerLink="/home">Home</button></li>
+                <li><button class="tab" mat-flat-button routerLinkActive="active" routerLink="/activities">Activity</button></li>
+                <!-- <li><button class="tab" mat-flat-button routerLinkActive="active" routerLink="/care">Care</button></li> -->
+                <!-- <li><button class="tab" mat-flat-button routerLinkActive="active" routerLink="/store">Store</button></li> -->
+                <li><button class="tab" mat-flat-button routerLinkActive="active" routerLink="/admin" >Admin</button></li>
+                <li>
+                    <button *ngIf="!adminName; else logoutBtn" class="tab" mat-flat-button routerLinkActive="active" routerLink="/login" >Login</button>
+                    <ng-template #logoutBtn>
+                        <button class="tab" mat-flat-button routerLinkActive="active" (click)="onLogoutBtnClicked()">Logout <span> as {{adminName}}</span></button>
+                    </ng-template>
+                </li>
+            </ul>
+        </mat-toolbar>
+        <div class="routing">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

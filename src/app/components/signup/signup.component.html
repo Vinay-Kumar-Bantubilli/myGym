@@ -1,0 +1,86 @@
+<div class="cont">
+    <div class="container form">
+        <h1 class="heading">Sign Up Form</h1>
+        <form #formGroup="ngForm" class="form-body">
+            <mat-form-field>
+                <mat-label>Name</mat-label>    
+                <input type="text" matInput [(ngModel)]="name" name="name" id="name" required (input)="onCpasswordInput(formGroup)">
+            </mat-form-field>
+            &nbsp;
+            <mat-form-field>
+                <mat-label>Gender</mat-label>
+                <mat-select name="gender" id="gender" required 
+                [(ngModel)]="gender">
+                    <mat-option value="male" selected>Male</mat-option>
+                    <mat-option value="female" >Female</mat-option>
+                </mat-select>
+              </mat-form-field>
+        
+        
+            <mat-form-field>
+                <mat-label>Mobile</mat-label>    
+                <input type="number" matInput [(ngModel)]="mobile" name="mobile" id="mobile" required 
+                (input)="onCpasswordInput(formGroup)" 
+                [(ngModel)]="mobile">
+            </mat-form-field>
+            &nbsp;
+        
+            <mat-form-field>
+                <mat-label>E-Mail</mat-label>    
+                <input type="email" matInput name="mail" id="mail" required 
+                (input)="onCpasswordInput(formGroup)"
+                [(ngModel)]="mail">
+            </mat-form-field>
+        
+        
+            <mat-form-field>
+                <mat-label>Subscription Type</mat-label>
+                <mat-select name="subtype" id="subtype" required 
+                [(ngModel)]="subtype">
+                    <mat-option value="active" selected>Yearly</mat-option>
+                    <mat-option value="inactive" >Monthly</mat-option>
+                </mat-select>
+              </mat-form-field>
+              &nbsp;
+        
+
+            <mat-form-field>
+                <mat-label>Status</mat-label>
+                <mat-select name="status" id="status" required 
+                (input)="onCpasswordInput(formGroup)"
+                [(ngModel)]="status">
+                    <mat-option value="active" selected>Active</mat-option>
+                    <mat-option value="inactive" >In-Active</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+
+              <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput #input name="password" id="password" maxlength="10" placeholder="Create Password" 
+                [(ngModel)]="password" 
+                (input)="onCpasswordInput(formGroup)" required>
+            </mat-form-field>
+            &nbsp;
+
+            <mat-form-field>
+                <mat-label>Re-Enter Password</mat-label> 
+                <input matInput #input maxlength="10" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" [(ngModel)]="cpassword" (input)="onCpasswordInput(formGroup)" required>
+            </mat-form-field>
+            <br>
+
+        <div>
+            <mat-checkbox class="checkbox" type="checkbox" (click)="signUpAsAdmin()" name="isAdmin" id="isAdmin" value="true">
+                <span class="login-as-admin-text">signUp as admin</span>
+            </mat-checkbox>
+            <br><br>
+            <div class="actions">
+                <button mat-raised-button color="primary" class="signupBtn" (click)="onSignUpBtnClicked(formGroup)" [disabled]="!enabled" id="signupBtn">Sign Up</button>
+                <span class="signupFormLink" routerLink="/login">go to login form</span>
+            </div>
+        </div>
+
+
+        </form>
+    </div>
+</div>

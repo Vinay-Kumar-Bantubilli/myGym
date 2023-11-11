@@ -1,0 +1,24 @@
+img{
+    width: 100%;
+    height: 100%;
+}
+.image{
+    position: relative;
+}
+.title{
+    position: absolute;
+    top: 30vh;
+    right: 8vw;
+}
+.title-head{
+    color: rgb(155, 155, 155);
+    font-size: 40px;
+   
+    text-shadow: 1px 1px 3px black;
+}
+.movement{
+    color: greenyellow;
+}
+.subBtn{
+    background-color: rgb(222, 240, 255, 0.6);
+}

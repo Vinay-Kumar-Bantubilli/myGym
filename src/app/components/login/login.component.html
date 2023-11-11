@@ -1,0 +1,28 @@
+<div class="cont">
+        <div class="errorMsgBg">
+            <span class="errorUnameAndPassword" *ngIf="isError">Incorrect User name or Password</span>
+        </div>
+    <div class="container form">
+        <h1 class="heading">Login Form</h1>
+        
+        <form #formGroup="ngForm" >
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input type="text" name="name" id="name" #input matInput placeholder="Name" [(ngModel)]="name" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input type="password" matInput name="password" id="password" #input placeholder="password" [(ngModel)]="password" required>
+            </mat-form-field>
+
+            <input type="checkbox" value="admin" (click)="adminOrUser()"> &nbsp;<span class="login-as-admin-text">login as admin</span>    
+            <br><br>
+
+           <div class="actions">
+            <button mat-raised-button color="primary" (click)="onLoginBtnClicked(formGroup)">login</button>
+            <span class="signupFormLink" routerLink="/signup">Create new account</span>
+           </div>
+        </form>
+    </div>
+</div>

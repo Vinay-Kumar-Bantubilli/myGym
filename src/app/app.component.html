@@ -1,0 +1,13 @@
+<div [ngSwitch]="router.url">
+   <ng-container *ngSwitchCase="'/login'">
+      <router-outlet></router-outlet>
+   </ng-container>
+   
+   <ng-container *ngSwitchCase="'/signup'">
+      <router-outlet></router-outlet>
+   </ng-container>
+
+   <ng-container *ngSwitchDefault>
+      <app-sidenav></app-sidenav>
+   </ng-container>
+</div>

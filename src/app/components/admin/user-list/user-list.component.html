@@ -1,0 +1,88 @@
+<div class="container cont">
+    <div class="container action" >
+
+        <!-- Filter by gender -->
+        <mat-form-field>
+            <mat-label>Filter By Gender</mat-label>
+            <mat-select [(ngModel)]="filterValue" (ngModelChange)="fetchData()">
+                <mat-option value="all" selected>All</mat-option>
+                <mat-option value="male" >Male</mat-option>
+                <mat-option value="female" >Female</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+          <!-- filter by sub type -->
+          <mat-form-field>
+            <mat-label>Filter by subscription Type</mat-label>
+            <mat-select [(ngModel)]="filterValue" (ngModelChange)="fetchData()">
+                <mat-option value="all" selected>All</mat-option>
+                <mat-option value="yearly" selected>Yearly</mat-option>
+                <mat-option value="monthly" >Monthly</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- filter by activity -->
+          <mat-form-field>
+            <mat-label>Filter by Activity</mat-label>
+            <mat-select [(ngModel)]="filterValue" (ngModelChange)="fetchData()">
+                <mat-option value="all" selected>All</mat-option>
+                <mat-option value="active" selected>Active</mat-option>
+                <mat-option value="inactive" >In-Active</mat-option>
+            </mat-select>
+          </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Search By name</mat-label>    
+            <input type="text" matInput [(ngModel)]="searchFilterValue" (input)="onSearchBtnClicked()">
+        </mat-form-field>
+
+        <button mat-button (click)="onSearchBtnClicked()">search</button>
+
+        <button mat-raised-button color="primary" (click)="openUserForm()">Add User</button>
+
+        <ng-container *ngIf="open" class="form container">
+            <app-user-form (onSaveAndCanceClicked)="open = !open"></app-user-form>
+        </ng-container>
+
+        <ng-container *ngIf="isEditing" class="form container">
+            <app-edit-user (onSaveAndCanceClickedinEdit)="isEditing = !isEditing" [data]="data"></app-edit-user>
+        </ng-container>
+
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Mobile</th>
+                <th>Mail</th>
+                <th>Subscription Type</th>
+                <th>Statue</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of dataSource">
+                <td>{{row.id}}</td>
+                <td>{{row.name}}</td>
+                <td>{{row.gender}}</td>
+                <td>{{row.mobile}}</td>
+                <td>{{row.mail}}</td>
+                <td>{{row.subtype}}</td>
+                <td>{{row.status}}</td>
+                <td>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" color="warn">
+                        <mat-icon >more_vert</mat-icon>  
+                    </button>
+    
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="deleteBtnClicked(row)">Delete</button>
+                        <button mat-menu-item (click)="onEditBtnClicked(row)">Edit</button>
+                    </mat-menu>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

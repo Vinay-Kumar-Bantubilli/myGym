@@ -1,0 +1,81 @@
+{
+  "admin": [
+    {
+      "name": "vinay",
+      "gender": "male",
+      "mobile": 9052522674,
+      "mail": "vinay@gmail.com",
+      "subtype": "active",
+      "status": "active",
+      "password": "Bubivykr.9",
+      "confirmPassword": "Bubivykr.9",
+      "id": 1
+    },
+    {
+      "name": "bujji",
+      "gender": "female",
+      "mobile": 5566445566,
+      "mail": "bujji@gmail.com",
+      "subtype": "active",
+      "status": "active",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 2
+    },
+    {
+      "name": "kalyan",
+      "gender": "male",
+      "mobile": 9398358157,
+      "mail": "kalyan@gmail.com",
+      "subtype": "active",
+      "status": "active",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 3
+    },
+    {
+      "name": "vinaybb",
+      "gender": "male",
+      "mobile": 15465656,
+      "mail": "vinaybb@gmail.com",
+      "subtype": "inactive",
+      "status": "active",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "name": "vinay",
+      "gender": "male",
+      "mobile": 9052522674,
+      "mail": "vinay@gmail.com",
+      "subtype": "yearly",
+      "status": "active",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 1
+    },
+    {
+      "name": "bujji",
+      "gender": "female",
+      "mobile": 9052522678,
+      "mail": "bujji@gmail.com",
+      "subtype": "yearly",
+      "status": "active",
+      "password": "bujji123",
+      "id": 2
+    },
+    {
+      "name": "kalyan",
+      "gender": "male",
+      "mobile": 9398358157,
+      "mail": "kalyan@gmail.com",
+      "subtype": "yearly",
+      "status": "active",
+      "password": "kalyan@123",
+      "id": 3
+    }
+  ]
+}
